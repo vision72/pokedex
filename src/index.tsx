@@ -1,6 +1,12 @@
 import React from 'react';
-import {SafeAreaView, useColorScheme} from 'react-native';
-import {Colors} from './src/styles';
+import {
+  SafeAreaView,
+  StyleProp,
+  StyleSheet,
+  ViewStyle,
+  useColorScheme,
+} from 'react-native';
+import {Colors} from './styles';
 
 /**
  * The main App component.
@@ -15,11 +21,14 @@ function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   // Define the background style based on the color scheme
-  const backgroundStyle = {
-    backgroundColor: isDarkMode
-      ? Colors.grayScale.Dark // Dark mode background color
-      : Colors.grayScale.White, // Light mode background color
-  };
+  const backgroundStyle = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: isDarkMode
+        ? Colors.grayScale.Dark // Dark mode background color
+        : Colors.grayScale.White, // Light mode background color
+    },
+  }) as StyleProp<ViewStyle>;
 
   // Render the SafeAreaView with the appropriate background color
   return <SafeAreaView style={backgroundStyle}></SafeAreaView>;
