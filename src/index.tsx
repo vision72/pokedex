@@ -6,7 +6,9 @@ import {
   ViewStyle,
   useColorScheme,
 } from 'react-native';
-import {Colors} from './styles';
+
+import { PokemonType } from './components/molecules';
+import { Colors } from './styles';
 
 /**
  * The main App component.
@@ -31,7 +33,12 @@ function App(): React.JSX.Element {
   }) as StyleProp<ViewStyle>;
 
   // Render the SafeAreaView with the appropriate background color
-  return <SafeAreaView style={backgroundStyle}></SafeAreaView>;
+  // Test component designs under SafeAreaView
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <PokemonType name="Bulbasaur" pokemonType="Grass" />
+    </SafeAreaView>
+  );
 }
 
 export default App;

@@ -7,7 +7,8 @@ export const identity: Record<Identity, string> = {
 };
 
 // Define a type for Pokemon types with various options representing different Pokemon types
-type PokemonType =
+export type PokemonType =
+  | 'Type'
   | 'Bug'
   | 'Dark'
   | 'Dragon'
@@ -29,6 +30,7 @@ type PokemonType =
 
 // Define the color palette for Pokemon types
 export const pokemonType: Record<PokemonType, string> = {
+  Type: '#666666', // Color for Default type
   Bug: '#A7B723', // Color for Bug type
   Dark: '#75574C', // Color for Dark type
   Dragon: '#7037FF', // Color for Dragon type
